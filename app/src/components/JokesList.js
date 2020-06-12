@@ -6,13 +6,14 @@ const JokesList = props => {
         <>
             {props.error ? (
                 <div className='error'>{props.error}</div>
-            ) : (
-                    props.jokes.map((joke, idx) => (
-                        <div key={idx} className='joke'>
-                            <h2>{joke.setup}</h2>
-                            <h3>{joke.punchline}</h3>
-                        </div>
-                    )))}
+            ) : (<div className='all-jokes'>
+                {props.jokes.map((joke, idx) => (
+                    <div key={idx} className='joke'>
+                        <h2>{joke.setup}</h2>
+                        <h3>{joke.punchline}</h3>
+                    </div>
+                ))}</div>
+                )}
         </>
     );
 };
